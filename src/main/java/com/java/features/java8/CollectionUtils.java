@@ -13,7 +13,7 @@ public class CollectionUtils {
     }
 
     /**
-     * List to Map conversion using Java Streams API
+     * List to Map conversion using Java8 Streams API
      */
     private static void listToMap() {
         List<String> captains = List.of(
