@@ -1,8 +1,7 @@
 package com.java.features.playground.npci;
 // Importing necessary libraries
-import java.util.*;
 
-public class Main {
+public class BribeCalculator {
     // Function to find minimum number of bribes
     public static void minimumBribes(int[] q) {
         int bribe = 0;
