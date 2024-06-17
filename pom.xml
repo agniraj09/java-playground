@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>com.java.features</groupId>
-    <artifactId>java-8-to-17</artifactId>
+    <artifactId>java-playground</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>java-8-to-17</name>
-    <description>Playground repository to try new concepts introduced from Java 8 to 17</description>
+    <name>java-playground</name>
+    <description>Playground repository to try all concepts and features in Java</description>
     <properties>
         <java.version>17</java.version>
     </properties>
