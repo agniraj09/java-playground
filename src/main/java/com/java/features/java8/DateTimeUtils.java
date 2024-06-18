@@ -1,10 +1,8 @@
 package com.java.features.java8;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Optional;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class DateTimeUtils {
@@ -14,20 +12,21 @@ public class DateTimeUtils {
         elapsedTime();
     }
 
-    /**
-     * Date Time Parsing in Java 8 using LocalDate
-     */
+    /** Date Time Parsing in Java 8 using LocalDate */
     private static void dateFormat() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         String date = "12/31/2023";
         var parsedDate = LocalDate.parse(date, formatter);
         log.info("Input date {} has been parsed to {}", date, parsedDate);
-        log.info("Parsed date {} has been formatted back to {}", parsedDate, formatter.format(parsedDate));
+        // Input date 12/31/2023 has been parsed to 2023-12-31
+        log.info(
+                "Parsed date {} has been formatted back to {}",
+                parsedDate,
+                formatter.format(parsedDate));
+        // Parsed date 2023-12-31 has been formatted back to 12/31/2023
     }
 
-    /**
-     * Calculate time elapsed in a method/task
-     */
+    /** Calculate time elapsed in a method/task */
     private static void elapsedTime() {
         long startTime = System.currentTimeMillis();
         log.info("Start time {}", startTime);
@@ -40,6 +39,4 @@ public class DateTimeUtils {
         log.info("End time {}", endTime);
         log.info("Elapsed Time -> {} seconds", (endTime - startTime) / 1000);
     }
-
-
 }

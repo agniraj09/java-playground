@@ -1,9 +1,7 @@
 package com.java.features.java9.collectionutils;
 
-import lombok.extern.slf4j.Slf4j;
-
-import java.util.List;
 import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class CollectionUtils {

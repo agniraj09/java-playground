@@ -19,6 +19,5 @@ public class PyramidBuilder {
 
             System.out.println("");
         }
-
     }
 }

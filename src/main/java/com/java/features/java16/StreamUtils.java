@@ -1,16 +1,15 @@
 package com.java.features.java16;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.Stream;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class StreamUtils {
     public static void main(String[] args) {
-        dayInPeriod();
         toListUtil();
+        dayInPeriod();
     }
 
     private static void toListUtil() {
