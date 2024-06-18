@@ -1,6 +1,7 @@
 package com.java.features.playground.problems.whatsapp.custom_list;
 
 import java.util.*;
+import java.util.function.Predicate;
 
 public class CustomList<E> extends ArrayList<E> {
 
@@ -11,8 +12,6 @@ public class CustomList<E> extends ArrayList<E> {
 
     @Override
     public boolean addAll(Collection<? extends E> c) {
-        List<E> input = new ArrayList<>(c.stream().distinct().toList());
-        input.removeAll(this);
-        return super.addAll(input);
+        return c.stream().filter(Predicate.not(this::contains)).allMatch(this::add);
     }
 }
