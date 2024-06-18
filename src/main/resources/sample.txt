@@ -1,0 +1,5 @@
+Java 12 introduced a new mismatch method in the nio.file.Files utility class.
+
+The method is used to compare two files and find the position of the first mismatched byte in their contents.
+
+The return value will be in the inclusive range of 0L up to the byte size of the smaller file or -1L if the files are identical.
