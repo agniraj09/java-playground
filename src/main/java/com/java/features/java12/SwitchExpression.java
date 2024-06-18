@@ -77,6 +77,8 @@ public class SwitchExpression {
                             yield "Special day";
                         }
                         yield "Working Day";
+                        // Alternate
+                        // yield (dayOfWeek == DayOfWeek.FRIDAY) ? "Special day" : "Working Day";
                     }
                     case SATURDAY, SUNDAY -> "Day Off";
                 };

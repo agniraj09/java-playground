@@ -11,15 +11,13 @@ public class PrintDuplicateChars {
         String s = "28 td tda 54242ljdnd";
 
         Set<Character> duplicates = new HashSet<>();
-        int i = 0;
-        do {
-            int firstindex = s.indexOf(s.charAt(i));
-            int lastindex = s.lastIndexOf(s.charAt(i));
-            if (firstindex != lastindex) {
-                duplicates.add(s.charAt(i));
+        Set<Character> seen = new HashSet<>();
+
+        for (char c : s.toCharArray()) {
+            if (!seen.add(c)) {
+                duplicates.add(c);
             }
-            ++i;
-        } while (i < s.length());
+        }
 
         log.info("Duplicate characters {}", duplicates);
     }

@@ -11,8 +11,7 @@ public class AreAllSmall {
         boolean foundCaps = false;
 
         for (char c : s.toCharArray()) {
-            String character = String.valueOf(c);
-            if (!character.equals(character.toLowerCase())) {
+            if (Character.isUpperCase(c)) {
                 foundCaps = true;
                 break;
             }

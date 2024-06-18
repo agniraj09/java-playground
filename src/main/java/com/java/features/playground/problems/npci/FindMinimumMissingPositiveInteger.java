@@ -22,10 +22,13 @@ class FindMinimumMissingPositiveInteger {
 
     public static int solution(int[] A) {
         int minimumNumber = 0;
-        List<Integer> input = new ArrayList<>();
-        Arrays.stream(A).forEach(number -> input.add(number));
-        input.sort(Integer::compareTo);
-        input.removeIf(number -> number < 0);
+        List<Integer> input =
+                new ArrayList<>(
+                        Arrays.stream(A)
+                                .boxed()
+                                .filter(number -> number > 0)
+                                .sorted(Integer::compareTo)
+                                .toList());
         if (input.isEmpty()) {
             minimumNumber = 1;
             return minimumNumber;

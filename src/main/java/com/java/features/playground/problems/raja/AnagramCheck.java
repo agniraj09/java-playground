@@ -12,6 +12,7 @@ public class AnagramCheck {
 
         if (s1.length() != s2.length()) {
             log.info("Not anagram");
+            return;
         }
         char[] s1list = s1.toCharArray();
         char[] s2list = s2.toCharArray();

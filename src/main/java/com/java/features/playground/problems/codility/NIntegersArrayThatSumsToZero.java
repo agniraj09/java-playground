@@ -1,8 +1,11 @@
 package com.java.features.playground.problems.codility;
 
+import java.util.Arrays;
+
 public class NIntegersArrayThatSumsToZero {
     public static void main(String[] args) {
-        solution(5);
+        int[] numbers = solution(5);
+        System.out.println(Arrays.toString(numbers));
     }
 
     public static int[] solution(int N) {
