@@ -1,8 +1,6 @@
 package com.java.features.java8;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -39,17 +37,15 @@ public class StreamFunctions {
     }
 
     private static void groupBy() {
-        List<String> items =
-                List.of("apple", "apple", "banana", "apple", "orange", "banana", "papaya");
-        var group =
-                items.stream()
-                        .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        List<String> items = List.of("apple", "apple", "banana", "apple", "orange", "banana", "papaya");
+        var group = items.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         log.info("Group {}", group);
     }
 
     private static void iterateUtil() {
         log.info(
-                "Stream iterate using limit -> {}", Stream.iterate(5, n -> n + 1).limit(5).count());
+                "Stream iterate using limit -> {}",
+                Stream.iterate(5, n -> n + 1).limit(5).count());
         log.info(
                 "Stream iterate using condition -> {}",
                 Stream.iterate(99, n -> n < 111, n -> n + 1).count());
@@ -70,5 +66,13 @@ public class StreamFunctions {
         var words = lines.stream().flatMap(line -> Stream.of(line.split(" "))).toList();
         log.info("Words in list is {}", words);
         log.info("Number of words in list is {}", words.size());
+
+
+        List<List<String>> multiDimList =
+                List.of(List.of("Agni"), List.of("Raj"),List.of("Guna"));
+        var result = multiDimList.stream().flatMap(Collection::stream).toList();
+        log.info("Words in list is {}", result);
+
+
     }
 }

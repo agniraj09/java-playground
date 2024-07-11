@@ -26,17 +26,13 @@ public class FunctionalInterfaces {
     private static void unaryOperator() {
         log.info("***   unaryOperator demo    ***");
         // sample 1
-        UnaryOperator<String> unaryOperatorString =
-                name -> "Hello " + name + ", Welcome to Java tutorials!";
+        UnaryOperator<String> unaryOperatorString = name -> "Hello " + name + ", Welcome to Java tutorials!";
         log.info("unaryOperatorString -> {}", unaryOperatorString.apply("Agni"));
 
         // sample 2
         UnaryOperator<Integer> unaryOperatorIntSquare = value -> value * value;
         var value = 567;
-        log.info(
-                "unaryOperatorIntSquare -> Square of {} is {}",
-                value,
-                unaryOperatorIntSquare.apply(value));
+        log.info("unaryOperatorIntSquare -> Square of {} is {}", value, unaryOperatorIntSquare.apply(value));
 
         log.info("***   unaryOperator demo    ***\n");
     }
@@ -49,9 +45,7 @@ public class FunctionalInterfaces {
         log.info("***   binaryOperator demo    ***");
         // sample 1
         BinaryOperator<String> binaryOperatorString = (name, city) -> name + " is from " + city;
-        log.info(
-                "binaryOperatorString example -> {}",
-                binaryOperatorString.apply("Agni", "Chennai"));
+        log.info("binaryOperatorString example -> {}", binaryOperatorString.apply("Agni", "Chennai"));
         // sample 2
         double stockUnits = 45;
         double stockPrice = 567.89;
@@ -75,11 +69,8 @@ public class FunctionalInterfaces {
         log.info("functionOddOrEven -> {} is {} number", number, functionOddOrEven.apply(number));
 
         // sample 2
-        Function<Integer, String> luckyOrUnlucky =
-                chosenNumber ->
-                        ((chosenNumber == new Random().nextInt(2, 5))
-                                ? "You are lucky today!"
-                                : "You are unlucky today!");
+        Function<Integer, String> luckyOrUnlucky = chosenNumber ->
+                ((chosenNumber == new Random().nextInt(2, 5)) ? "You are lucky today!" : "You are unlucky today!");
         log.info("luckyOrUnlucky -> {}", luckyOrUnlucky.apply(5));
 
         log.info("***   function demo    ***\n");
@@ -125,8 +116,7 @@ public class FunctionalInterfaces {
     private static void biPredicate() {
         log.info("***   biPredicate demo    ***");
         // sample 1
-        BiPredicate<Integer, Double> eligibleForTaxConcession =
-                (age, income) -> (age >= 60 && income < 10000);
+        BiPredicate<Integer, Double> eligibleForTaxConcession = (age, income) -> (age >= 60 && income < 10000);
         var age = 50;
         var income = 200000D;
         log.info(
@@ -141,11 +131,10 @@ public class FunctionalInterfaces {
     private static void consumer() {
         log.info("***   consumer demo    ***");
         // sample 1
-        Consumer<Integer> votingEligibilityValidation =
-                age -> {
-                    if (age >= 18) log.info("Age {}. Eligible for voting", age);
-                    else log.info("Age {}. Not eligible for voting", age);
-                };
+        Consumer<Integer> votingEligibilityValidation = age -> {
+            if (age >= 18) log.info("Age {}. Eligible for voting", age);
+            else log.info("Age {}. Not eligible for voting", age);
+        };
 
         var age = 20;
         log.info("votingEligibilityValidation consumer in action.");
@@ -162,15 +151,7 @@ public class FunctionalInterfaces {
         log.info("***   supplier demo    ***");
         // sample 1
         Supplier<List<String>> daysSupplier =
-                () ->
-                        List.of(
-                                "Sunday",
-                                "Monday",
-                                "Tuesday",
-                                "Wednesday",
-                                "Thursday",
-                                "Friday",
-                                "Saturday");
+                () -> List.of("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
         log.info("supplier -> {}", daysSupplier.get());
 
         log.info("***   supplier demo    ***\n");

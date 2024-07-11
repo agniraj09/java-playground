@@ -11,7 +11,9 @@ public class NotPredicateMethod {
 
         log.info(
                 "Predicate.not to filter blank values {}",
-                Stream.of("A", "B", "C", " ", "F").filter(Predicate.not(String::isBlank)).toList());
+                Stream.of("A", "B", "C", " ", "F")
+                        .filter(Predicate.not(String::isBlank))
+                        .toList());
 
         log.info(
                 "Predicate.not to filter negative values {}",

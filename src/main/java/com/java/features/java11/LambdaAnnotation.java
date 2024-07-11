@@ -7,10 +7,7 @@ import lombok.NonNull;
 public class LambdaAnnotation {
     public static void main(String[] args) {
         List<String> list = List.of("a", "b", "c");
-        String result =
-                list.stream()
-                        .map((@NonNull var x) -> x.toUpperCase())
-                        .collect(Collectors.joining(","));
+        String result = list.stream().map((@NonNull var x) -> x.toUpperCase()).collect(Collectors.joining(","));
         System.out.println(result);
     }
 }

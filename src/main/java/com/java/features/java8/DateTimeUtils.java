@@ -19,10 +19,7 @@ public class DateTimeUtils {
         var parsedDate = LocalDate.parse(date, formatter);
         log.info("Input date {} has been parsed to {}", date, parsedDate);
         // Input date 12/31/2023 has been parsed to 2023-12-31
-        log.info(
-                "Parsed date {} has been formatted back to {}",
-                parsedDate,
-                formatter.format(parsedDate));
+        log.info("Parsed date {} has been formatted back to {}", parsedDate, formatter.format(parsedDate));
         // Parsed date 2023-12-31 has been formatted back to 12/31/2023
     }
 

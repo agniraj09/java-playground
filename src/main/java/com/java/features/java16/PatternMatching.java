@@ -12,20 +12,18 @@ public class PatternMatching {
         objList.add(Integer.valueOf(10));
 
         // Previous implementation using regular instance of
-        objList.forEach(
-                obj -> {
-                    if (obj instanceof String) {
-                        String stringObj = (String) obj;
-                        log.info(stringObj.toUpperCase());
-                    }
-                });
+        objList.forEach(obj -> {
+            if (obj instanceof String) {
+                String stringObj = (String) obj;
+                log.info(stringObj.toUpperCase());
+            }
+        });
 
         // New implementation using pattern matching instance of
-        objList.forEach(
-                obj -> {
-                    if (obj instanceof String stringObj) {
-                        log.info(stringObj.toUpperCase());
-                    }
-                });
+        objList.forEach(obj -> {
+            if (obj instanceof String stringObj) {
+                log.info(stringObj.toUpperCase());
+            }
+        });
     }
 }

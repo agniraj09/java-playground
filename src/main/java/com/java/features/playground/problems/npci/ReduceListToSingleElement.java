@@ -14,9 +14,8 @@ public class ReduceListToSingleElement {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter number as comma separated");
         String numberString = scan.nextLine();
-        List<Integer> numbers =
-                new ArrayList<>(
-                        Arrays.stream(numberString.split(",")).map(Integer::valueOf).toList());
+        List<Integer> numbers = new ArrayList<>(
+                Arrays.stream(numberString.split(",")).map(Integer::valueOf).toList());
         double cost = calculateCost(numbers);
         System.out.println("Cost -> " + cost);
     }
@@ -30,30 +29,25 @@ public class ReduceListToSingleElement {
 
             int sum = maxNumber + minNumber;
 
-            cost =
-                    cost
-                            + Math.ceil(
-                                    Double.valueOf(sum)
-                                            / Double.valueOf(maxNumber - minNumber + 1));
+            cost = cost + Math.ceil(Double.valueOf(sum) / Double.valueOf(maxNumber - minNumber + 1));
 
             foundMin = false;
             foundMax = false;
-            numbers.removeIf(
-                    element -> {
-                        if (foundMin && foundMax) {
-                            return false;
-                        }
+            numbers.removeIf(element -> {
+                if (foundMin && foundMax) {
+                    return false;
+                }
 
-                        if (element.equals(maxNumber)) {
-                            foundMax = true;
-                            return true;
-                        }
-                        if (element.equals(minNumber)) {
-                            foundMin = true;
-                            return true;
-                        }
-                        return false;
-                    });
+                if (element.equals(maxNumber)) {
+                    foundMax = true;
+                    return true;
+                }
+                if (element.equals(minNumber)) {
+                    foundMin = true;
+                    return true;
+                }
+                return false;
+            });
 
             numbers.add(sum);
         } while (numbers.size() > 1);

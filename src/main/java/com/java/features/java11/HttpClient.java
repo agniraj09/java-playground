@@ -15,16 +15,14 @@ public class HttpClient {
     }
 
     private static void httpClientCall() throws IOException, InterruptedException {
-        java.net.http.HttpClient client =
-                java.net.http.HttpClient.newBuilder()
-                        .connectTimeout(Duration.ofMinutes(10))
-                        .build();
+        java.net.http.HttpClient client = java.net.http.HttpClient.newBuilder()
+                .connectTimeout(Duration.ofMinutes(10))
+                .build();
 
-        HttpRequest request =
-                HttpRequest.newBuilder(URI.create("https://httpbin.org/get"))
-                        .header("User-Agent", "Java 11 HttpClient Bot")
-                        .GET()
-                        .build();
+        HttpRequest request = HttpRequest.newBuilder(URI.create("https://httpbin.org/get"))
+                .header("User-Agent", "Java 11 HttpClient Bot")
+                .GET()
+                .build();
 
         var response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
