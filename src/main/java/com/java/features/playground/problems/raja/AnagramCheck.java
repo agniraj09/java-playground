@@ -19,6 +19,7 @@ public class AnagramCheck {
 
         Arrays.sort(s1list);
         Arrays.sort(s2list);
+        // Arrays.compare(s1list, s2list);
 
         boolean isAnagram = true;
         for (int i = 0; i < s1list.length; i++) {

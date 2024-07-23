@@ -1,6 +1,7 @@
 package com.java.features.java8;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
 
@@ -8,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 public class CollectionUtils {
 
     public static void main(String[] args) {
+        hello();
         listToMap();
     }
 
@@ -24,5 +26,12 @@ public class CollectionUtils {
         // List to Grouped Map with Key-Count
         var groupedMap = captains.stream().collect(Collectors.groupingBy(element -> element, Collectors.counting()));
         log.info("List grouped to Map -> {}", groupedMap);
+    }
+
+    static Optional<Void> hello() {
+        Optional<String> o1 = Optional.ofNullable(null);
+        System.out.println(o1.isPresent());
+
+        return Optional.empty();
     }
 }

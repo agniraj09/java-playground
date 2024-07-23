@@ -11,9 +11,7 @@ public class TeeingCollector {
 
         var averageFare = fares.stream()
                 .collect(Collectors.teeing(
-                        Collectors.summingInt(i -> i),
-                        Collectors.counting(),
-                        (sum, count) -> sum / count));
+                        Collectors.summingInt(i -> i), Collectors.counting(), (sum, count) -> sum / count));
 
         log.info("\nFares -> {} \nAverage Fare -> {}", fares, averageFare);
     }

@@ -14,11 +14,10 @@ public class Employee3rdHighestSalaried {
                 new Employee("Person3", 45000),
                 new Employee("Person4", 26000),
                 new Employee("Person5", 67000),
-                new Employee("Person6", 53000)
-        );
+                new Employee("Person6", 53000));
 
-
-        //var employee = employees.stream().sorted(Comparator.comparingInt(Employee::getSalary).reversed()).toList().get(2);
+        // var employee =
+        // employees.stream().sorted(Comparator.comparingInt(Employee::getSalary).reversed()).toList().get(2);
 
         List<Integer> sortedSalary = employees.stream()
                 .sorted(Comparator.comparingInt(Employee::getSalary).reversed())
@@ -33,17 +32,15 @@ public class Employee3rdHighestSalaried {
                 .skip(2)
                 .findFirst()
                 .orElseThrow();
-                //.toList();
-
+        // .toList();
 
         Integer thirdHigh = sortedSalary.get(2);
 
-        var employee = employees.stream().filter(e -> thirdHigh.equals(e.getSalary())).findFirst().get();
+        var employee = employees.stream()
+                .filter(e -> thirdHigh.equals(e.getSalary()))
+                .findFirst()
+                .get();
 
         System.out.println(employee.getName() + "-" + employee.getSalary());
-
-
-
     }
-
 }

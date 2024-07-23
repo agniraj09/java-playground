@@ -12,6 +12,6 @@ public class CustomList<E> extends ArrayList<E> {
 
     @Override
     public boolean addAll(Collection<? extends E> c) {
-        return c.stream().filter(Predicate.not(this::contains)).allMatch(this::add);
+        return super.addAll(c.stream().filter(Predicate.not(this::contains)).toList());
     }
 }

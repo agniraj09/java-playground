@@ -20,7 +20,7 @@ public class LongestUniqueSubString {
                 if (count > maxLength) {
                     startIndex = i;
                     endIndex = j + 1;
-                    maxLength = j + 1 ;
+                    maxLength = j + 1;
                 }
             }
         }
@@ -35,14 +35,14 @@ public class LongestUniqueSubString {
         int output_start = 0, output_end = 0;
         int start = 0;
 
-        for(int end = 0; end < word.length(); end++) {
+        for (int end = 0; end < word.length(); end++) {
             char currChar = word.charAt(end);
 
-            if(visited.containsKey(currChar)) {
+            if (visited.containsKey(currChar)) {
                 start = Math.max(start, visited.get(currChar) + 1);
             }
 
-            if(output_end - output_start < end - start) {
+            if (output_end - output_start < end - start) {
                 output_start = start;
                 output_end = end;
             }
@@ -52,5 +52,4 @@ public class LongestUniqueSubString {
 
         System.out.printf("Max unique substring %s", word.substring(output_start, output_end + 1));
     }
-
 }

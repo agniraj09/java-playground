@@ -67,12 +67,8 @@ public class StreamFunctions {
         log.info("Words in list is {}", words);
         log.info("Number of words in list is {}", words.size());
 
-
-        List<List<String>> multiDimList =
-                List.of(List.of("Agni"), List.of("Raj"),List.of("Guna"));
+        List<List<String>> multiDimList = List.of(List.of("Agni"), List.of("Raj"), List.of("Guna"));
         var result = multiDimList.stream().flatMap(Collection::stream).toList();
         log.info("Words in list is {}", result);
-
-
     }
 }

@@ -5,9 +5,7 @@ import java.util.Map;
 public class GreekToNumberOptimized {
     public static void maina(String[] args) {
 
-        Map<Character, Integer> letterMap =
-                Map.of('I', 1, 'V', 5, 'X', 10, 'L', 50, 'C', 100, 'D', 500, 'M', 1000);
-
+        Map<Character, Integer> letterMap = Map.of('I', 1, 'V', 5, 'X', 10, 'L', 50, 'C', 100, 'D', 500, 'M', 1000);
 
         String greekNumber = "MDXLVI";
 
@@ -23,7 +21,6 @@ public class GreekToNumberOptimized {
         }
 
         System.out.println("Value is " + sum);
-
     }
 
     public static void main(String[] args) {
