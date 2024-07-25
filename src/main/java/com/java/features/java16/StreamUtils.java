@@ -13,6 +13,7 @@ public class StreamUtils {
     }
 
     private static void toListUtil() {
+        // Convert a stream of strings to a list and log the result
         log.info(Stream.of("A", "B", "C").toList() + "");
     }
 
