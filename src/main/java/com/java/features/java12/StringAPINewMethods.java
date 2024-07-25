@@ -9,8 +9,9 @@ public class StringAPINewMethods {
     }
 
     private static void indentation() {
-        String name = "Agni";
+        String name = "Java";
         log.info(name);
         log.info(name.indent(5));
+        log.info(name.indent(-5));
     }
 }

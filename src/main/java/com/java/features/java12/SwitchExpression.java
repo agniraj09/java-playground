@@ -59,29 +59,27 @@ public class SwitchExpression {
 
     private static String newSwitchExpression(DayOfWeek dayOfWeek) {
         String typeOfDay = "";
-        typeOfDay =
-                switch (dayOfWeek) {
-                    case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> "Working Day";
-                    case SATURDAY, SUNDAY -> "Day Off";
-                };
+        typeOfDay = switch (dayOfWeek) {
+            case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> "Working Day";
+            case SATURDAY, SUNDAY -> "Day Off";
+        };
         log.info(typeOfDay);
         return typeOfDay;
     }
 
     private static String switchExpressionWithYield(DayOfWeek dayOfWeek) {
         String typeOfDay = "";
-        typeOfDay =
-                switch (dayOfWeek) {
-                    case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> {
-                        if (dayOfWeek == DayOfWeek.FRIDAY) {
-                            yield "Special day";
-                        }
-                        yield "Working Day";
-                        // Alternate
-                        // yield (dayOfWeek == DayOfWeek.FRIDAY) ? "Special day" : "Working Day";
-                    }
-                    case SATURDAY, SUNDAY -> "Day Off";
-                };
+        typeOfDay = switch (dayOfWeek) {
+            case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> {
+                if (dayOfWeek == DayOfWeek.FRIDAY) {
+                    yield "Special day";
+                }
+                yield "Working Day";
+                // Alternate
+                // yield (dayOfWeek == DayOfWeek.FRIDAY) ? "Special day" : "Working Day";
+            }
+            case SATURDAY, SUNDAY -> "Day Off";
+        };
         log.info(typeOfDay);
         return typeOfDay;
     }

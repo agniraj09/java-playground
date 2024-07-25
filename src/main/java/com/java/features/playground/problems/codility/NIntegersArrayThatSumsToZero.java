@@ -2,6 +2,8 @@ package com.java.features.playground.problems.codility;
 
 import java.util.Arrays;
 
+/*Given the number of elements, generate unique numbers in such a way that, the count of all numbers is equal to 0. Same number should not repeat again. This rule is not applicable for positive and negative combination. Meaning, -1 and +1 can be there. They are considered unique  */
+
 public class NIntegersArrayThatSumsToZero {
     public static void main(String[] args) {
         int[] numbers = solution(5);

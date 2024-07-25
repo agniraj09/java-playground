@@ -57,10 +57,12 @@
                 <version>${spotless.version}</version>
                 <configuration>
                     <java>
-                        <googleJavaFormat>
-                            <style>AOSP</style>
-                        </googleJavaFormat>
-                        <removeUnusedImports/>
+                        <palantirJavaFormat>
+                            <version>2.47.0</version>
+                        </palantirJavaFormat>
+                        <importOrder />
+                        <removeUnusedImports />
+                        <formatAnnotations />
                     </java>
                 </configuration>
             </plugin>
