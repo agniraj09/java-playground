@@ -31,9 +31,11 @@ public class StringAPINewMethods {
 
         log.info(
                 "Is Rajan and trimmed() Rajan same ? {} ",
-                "Rajan".equalsIgnoreCase(nameWithASCIISpaceInFrontAndUnicodeSpaceAtEnd.trim()) + "");
+                "Rajan".equalsIgnoreCase(nameWithASCIISpaceInFrontAndUnicodeSpaceAtEnd.trim())
+                        + "");
         log.info(
                 "Is Rajan and stripped() Rajan same ? {} ",
-                "Rajan".equalsIgnoreCase(nameWithASCIISpaceInFrontAndUnicodeSpaceAtEnd.strip()) + "");
+                "Rajan".equalsIgnoreCase(nameWithASCIISpaceInFrontAndUnicodeSpaceAtEnd.strip())
+                        + "");
     }
 }

@@ -48,7 +48,6 @@ public class ReduceListToSingleElement {
                 }
                 return false;
             });
-
             numbers.add(sum);
         } while (numbers.size() > 1);
 

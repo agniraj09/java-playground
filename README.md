@@ -1,3 +1,4 @@
-# java-8-to-17
+# java-playground
+
 Playground repository to try all concepts and features in Java
 
