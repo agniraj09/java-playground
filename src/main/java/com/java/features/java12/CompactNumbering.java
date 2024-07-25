@@ -11,10 +11,10 @@ public class CompactNumbering {
                 NumberFormat.getCompactNumberInstance(Locale.ENGLISH, NumberFormat.Style.SHORT);
         shortFormat.setMaximumFractionDigits(2);
         int likes = 3555555;
-        log.info(shortFormat.format(likes));
+        log.info(shortFormat.format(likes)); // 3.56M
 
         NumberFormat longFormat =
                 NumberFormat.getCompactNumberInstance(Locale.ENGLISH, NumberFormat.Style.LONG);
-        log.info(longFormat.format(likes));
+        log.info(longFormat.format(likes)); // 4 million
     }
 }
