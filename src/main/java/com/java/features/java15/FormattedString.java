@@ -1,4 +1,4 @@
-package com.example.boot.kafka.reactor;
+package com.java.features.java15;
 
 public class FormattedString {
 
