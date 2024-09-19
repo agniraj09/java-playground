@@ -26,6 +26,12 @@ public class Employee3rdHighestSalaried {
                 .toList();
 
         employees.stream()
+                .sorted(Comparator.comparingInt(Employee::getSalary).reversed())
+                .skip(2)
+                .findFirst()
+                .ifPresent(emp -> System.out.println(emp.getName()));
+
+        employees.stream()
                 .map(Employee::getSalary)
                 .distinct()
                 .sorted(Comparator.reverseOrder())
