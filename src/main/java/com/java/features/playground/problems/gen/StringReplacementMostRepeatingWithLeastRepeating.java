@@ -22,6 +22,8 @@ public class StringReplacementMostRepeatingWithLeastRepeating {
                 .stream()
                 .collect(Collectors.groupingBy(
                         Map.Entry::getValue, Collectors.mapping(Map.Entry::getKey, Collectors.toList())))
+                // .collect(Collectors.groupingBy( Map.Entry::getValue, Collectors.mapping(Map.Entry::getKey,
+                // Collectors.toList())))
                 .entrySet()
                 .stream()
                 .sorted((e1, e2) -> (int) (e2.getKey() - e1.getKey()))

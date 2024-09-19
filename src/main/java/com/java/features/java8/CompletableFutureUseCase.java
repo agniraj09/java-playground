@@ -48,6 +48,6 @@ public class CompletableFutureUseCase {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        return RandomGenerator.getDefault().nextInt();
+        return RandomGenerator.getDefault().nextInt(0, 10);
     }
 }
