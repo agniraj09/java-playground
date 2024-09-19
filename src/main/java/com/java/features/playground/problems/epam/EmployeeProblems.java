@@ -18,6 +18,9 @@ public class EmployeeProblems {
 
         emps.stream()
                 .collect(Collectors.groupingBy(Employee::name, Collectors.summingInt(Employee::salary)))
-                .forEach((k, v) -> System.out.println(k + " - " + v));
+                .entrySet().stream()
+                .sorted((e1, e2) -> e2.getValue() - e1.getValue())
+                .findFirst()
+                .ifPresent(entry -> System.out.println("Highest earning employee - " +  entry.getKey() + ". Salary - " + entry.getValue()));
     }
 }
